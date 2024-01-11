@@ -1,22 +1,25 @@
-# ![[tktk Module Name]](./assets/tktk-hero.png)
+# ![MEN Stack Error Handling](./assets/tktk-hero.png)
 
 ## About
 
-tktk Write a short but descriptive summary of the content in this module.
+This module provides a guide to error handling in Express applications. It covers essential techniques for managing errors on both the server and client.
 
 ## Prerequisites
 
-- tktk
-- tktk
 - tktk
 
 ## Content
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [tktk Microlesson Name](./tktk-microlesson-01/README.md) | -- | -- | tktk skills covered |
-| [tktk Microlesson Name](./tktk-microlesson-02/README.md) | -- | -- | tktk skills covered |
-| [tktk Microlesson Name](./tktk-microlesson-03/README.md) | -- | -- | tktk skills covered |
+| [Setup](./setup/README.md) | -- | -- | Setting up the development environment. |
+| [Concepts](./concepts/README.md) | -- | -- | Understanding the purpose and importance of error handling in an application. |
+| [Server-Side Error Handling](./server-side-error-handling/README.md) | -- | -- |  Understanding the role of server side error handling. |
+| [Client-Side Error Handling](./client-side-error-handling/README.md) | -- | -- |  Understanding the benefit of preempting errors on the client. |
+| [Error Pages](./error-pages/README.md) | -- | -- |  Implementing error pages in a web application. |
+| [Flash Messages](./flash-messages/README.md) | -- | -- |  Implementing flash messages in Express applications. |
+| [HTTP Status Codes](./http-status-codes/README.md) | -- | -- |  Understanding how to use HTTP status codes for effective error handling. |
+| [Handling Port Conflicts](./handling-port-conflicts/README.md) | -- | -- |  Handling port conflicts in an Express application. |
 | **Total content**                                        | -- | -- |                     |
 
 ## Level Up content
@@ -24,8 +27,6 @@ tktk Write a short but descriptive summary of the content in this module.
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
 | [tktk Level Up Microlesson Name](./level-up/tktk-microlesson-01.md) | -- | -- | tktk skills covered |
-| [tktk Level Up Microlesson Name](./level-up/tktk-microlesson-02.md) | -- | -- | tktk skills covered |
-| [tktk Level Up Microlesson Name](./level-up/tktk-microlesson-03.md) | -- | -- | tktk skills covered |
 | **Total Level Up content**                                          | -- | -- |                     |
 
 ## References
