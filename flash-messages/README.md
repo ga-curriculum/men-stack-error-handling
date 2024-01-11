@@ -1,4 +1,4 @@
-# ![Express Error Handling - Flash Messages](./assets/hero.png)
+# ![MEN Stack Error Handling - Flash Messages](./assets/hero.png)
 
 **Learning Objective:** By the end of this lesson, students will understand how to implement flash messages in Express applications.
 
@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 
 This middleware checks if there's a `message` in `req.session`. If so, it assigns it to `res.locals.message` for easy access in views, and then clears it from the session to Our middleware checks if there is a message stored in `req.session.message`. If it finds one, it transfers this message to `res.locals.message`. The `res.locals` object is accessible in our views, making it easy to display the flash message on the appropriate page.
 
-After updating `res.locals`, we set `req.session.message` to `null`. This ensures that the flash message is only displayed once for the user. Without this, the message would persist in the session and could be displayed at an inappropriate time. By accomplishing this in our middleware, we save ourselves the step of clearing our the session in every route handler that needs to display a message.
+After updating `res.locals`, we set `req.session.message` to `null`. This ensures that the flash message is only displayed once for the user. Without this, the message would persist in the session and could be displayed at an inappropriate time. By accomplishing this in our middleware, we save ourselves the step of clearing our the session in every controller function that needs to display a message.
 
 ## Displaying flash messages
 

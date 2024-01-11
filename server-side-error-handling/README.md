@@ -1,4 +1,4 @@
-# ![Express Error Handling - Server-Side Error Handling](./assets/hero.png)
+# ![MEN Stack Error Handling - Server-Side Error Handling](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will understand the role of server-side error handling.
 
@@ -46,7 +46,7 @@ const fruitSchema = mongoose.Schema({
 
 Notice how the `name` property is `required`. This prevents empty `name` strings from being added to the database by triggering a validation error if the condition is not met.
 
-Let's update our controller function for creating fruits as shown below:
+Let's update our controller function for creating fruits so it handles this validation error:
 
 ```javascript
 // controllers/fruits.js
@@ -60,7 +60,9 @@ router.post('/fruits', async (req, res) => {
 });
 ```
 
-Now, when a user submits a form without filling out the `name` field, the resulting validation error can be dealt with in our `try...catch` block. Because the operation in the `try` has failed, control is passed to the `catch` block, where it receives an `Error` object as an argument. The `Error` object will contain a `message` property with details about the error that occurred.
+Now, when a user submits a form without filling out the `name` field, the resulting validation error is dealt with in our `try...catch` block. 
+
+When the operation in the `try` has failed, control is passed to the `catch` block, where it receives an `Error` object as an argument. The `Error` object will contain a `message` property with details about the error that occurred.
 
 If the `name` field is ever missing from the form data, the terminal would display the following message:
 

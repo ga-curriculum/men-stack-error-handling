@@ -1,4 +1,4 @@
-# ![Express Error Handling - Client-Side Error Handling](./assets/hero.png)
+# ![MEN Stack Error Handling - Client-Side Error Handling](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will understand the benefit of preempting errors on the client.
 
@@ -67,7 +67,7 @@ Let's apply it to our fruit form with an internal stylesheet:
 
 Try it out!
 
-## Pitfalls of Client-Side Error Handling
+## Pitfalls of client-side error handling
 
 While client-side error handling improves user experience, it's important to be aware of its limitations:
 

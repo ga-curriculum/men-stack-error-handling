@@ -1,4 +1,4 @@
-# ![Express Error Handling - Handling Port Conflicts](./assets/hero.png)
+# ![MEN Stack Error Handling - Handling Port Conflicts](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to handle port conflicts in an Express application.
 

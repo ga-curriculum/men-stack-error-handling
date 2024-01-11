@@ -1,4 +1,4 @@
-# ![Express Error Handling - Error Pages](./assets/hero.png)
+# ![MEN Stack Error Handling - Error Pages](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to implement error pages in a web application.
 
@@ -39,7 +39,7 @@ This code sets up a basic error page template. The `<%= msg %>` will display wha
 
 You'll also notice the inclusion of a back button. This button makes use of `window.history`. [The `window.history` property](https://developer.mozilla.org/en-US/docs/Web/API/Window/history) holds methods for manipulating the browser history. The `back()` method will navigate the user to the previous page.
 
-To make use this error page in your application, you can update the `catch` block of an existing route handler like so:
+To make use this error page in your application, you can update the `catch` block of an existing controller like so:
 
 ```javascript
 // controllers/fruits.js
@@ -58,7 +58,7 @@ router.post('/fruits', async (req, res) => {
 
 ## Handling undefined routes
 
-At the moment, our error page is only rendered when an issue occurs within a route handler. What about `404` errors caused by users navigating to nonexistent pages? This can happen when a user types a URL directly into the address bar. In that scenario, no route would respond to the user's request.
+At the moment, our error page is only rendered when an issue occurs within a route handler/controller. What about `404` errors caused by users navigating to nonexistent pages? This can happen when a user types a URL directly into the address bar. In that scenario, no route would respond to the user's request.
 
 We can handle a scenario like that with a catch-all route handler:
 

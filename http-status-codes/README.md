@@ -1,4 +1,4 @@
-# ![Express Error Handling - HTTP Status Codes](./assets/hero.png)
+# ![MEN Stack Error Handling - HTTP Status Codes](./assets/hero.png)
 
 **Learning Objective:** By the end of this lesson, students will understand how to use HTTP status codes for effective error handling.
 
@@ -21,7 +21,7 @@ Common HTTP status codes include:
 
 A comprehensive list of HTTP status codes can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
-## Logging Status Codes with Morgan
+## Logging status codes with `morgan`
 
 During development, logging the status codes of requests can be helpful, especially in regards to debugging. 
 

@@ -1,4 +1,4 @@
-# ![Express Error Handling - Concepts](./assets/hero.png)
+# ![MEN Stack Error Handling - Concepts](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will understand the purpose and importance of error handling in an application.
 

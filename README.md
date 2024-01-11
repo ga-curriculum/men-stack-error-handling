@@ -1,4 +1,4 @@
-# ![Express Error Handling](./assets/tktk-hero.png)
+# ![MEN Stack Error Handling](./assets/tktk-hero.png)
 
 ## About
 

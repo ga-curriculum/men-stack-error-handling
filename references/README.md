@@ -1,4 +1,4 @@
-# ![Express Error Handling - References](./assets/hero.png)
+# ![MEN Stack Error Handling - References](./assets/hero.png)
 
 ## Lesson references
 

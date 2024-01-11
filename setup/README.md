@@ -1,4 +1,4 @@
-# ![Express Error Handling - Setup](./assets/hero.png)
+# ![MEN Stack Error Handling - Setup](./assets/hero.png)
 
 ## Setup
 
@@ -8,7 +8,9 @@ Open your terminal and navigate to your `lectures` directory:
 cd ~/code/ga/lectures
 ```
 
-Fork and clone the following repository:
+tktk This needs to be updated based on how we handle the auth template
+
+Fork and clone the repository:
 
 ```bash
 git clone https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template.git
