@@ -16,7 +16,7 @@ Below are a few benefits of effective server-side error handling:
 
 ## Error handling with `try...catch`
 
-One of the essential mechanisms for error handling on the server is the `try...catch` block. When using a `try...catch` block, the program first attempts to execute code written inside the `try`. If an error occurs, control is passed to the `catch` block where we can place code that handles and resolves the error.
+One of the essential mechanisms for error handling on the server is the `try...catch` block. When using a `try...catch` block, the program first attempts to execute code written inside the `try` block. If an error occurs, control is passed to the `catch` block where we can place code that handles and resolves the error.
 
 In the context of server-side error handling, `try...catch` blocks are quite versatile and can help manage a range of issues including:
 
@@ -56,6 +56,7 @@ router.post('/fruits', async (req, res) => {
     res.redirect('/fruits');
   } catch (err) {
     console.log(err.message) // Logs the error message
+    res.send('An error has occurred.  Go back and try again.')
   }
 });
 ```
@@ -69,6 +70,8 @@ If the `name` field is ever missing from the form data, the terminal would displ
 ```plaintext
 Fruit validation failed: name: Path `name` is required.
 ```
+
+The `catch` block will also send a response to client, informing the user that an error has occurred.
 
 However, it's important to note that `try...catch` blocks aren't perfect. There are many issues that will go undetected if a `try...catch` is the only safeguard applied. This leads us to the need for custom error handling.
 
@@ -87,7 +90,7 @@ Custom error handling can be useful when:
 
 Let's see an example of custom error handling at work.
 
-Imagine a scenario where a user fills out a form, but accidentally submits it with a `name` field that contains only blank spaces. While technically not empty, we should consider this invalid input. However, this kind of input does not trigger a validation error based on our current schema, which only checks for the existence of a value, not its content.
+Imagine a scenario where a user fills out a form but accidentally submits it with a `name` field that contains only blank spaces. While technically not empty, we should consider this invalid input. However, this kind of input does not trigger a validation error based on our current schema, which only checks for the existence of a value, not its content.
 
 Here is how we could modify our code to handle this edge case:
 
@@ -110,7 +113,7 @@ Notice the `if` statement in the example above.
 
 The [trim() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim) returns a new string with the white space removed. We've applied the method to the `name` property of `req.body`. If the `name` field is invalid, we create and `throw` a new error with a custom error message.
 
-This action passes control to our `catch` block, where the error message is passed to our view. As a result, the `create()` method is never called upon, and the invalid `name` input is never added to the database.
+When we `throw` an error, control passes immediately to our `catch` block, where the error message is passed to our view. As a result, the `create()` method is never called upon, and the invalid `name` input is never added to the database.
 
 Finally, we can display the `errorMessage` for users by adding the following to our view:
 
