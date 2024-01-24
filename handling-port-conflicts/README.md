@@ -4,11 +4,11 @@
 
 ## What are port conflicts?
 
-In web development, a port is an endpoint for network communications. They allow information to enter or leave a computer. Each port has a unique identifier. This helps differentiate between multiple services on a single computer. A port conflict occurs when multiple services try to use the same port number at the same time. This leads to a situation where neither service can operate.
+In web development, ports are endpoints for network communications. They allow information to enter or leave a computer. Each port has a unique numerical identifier. Much like a ship can dock at a specific port in real life, each app we write will "dock" at a specific port on your computer.  Once "docked", any information going to that port will be handle by that application. This helps differentiate where information should go when multiple applications (or "services") are running on a single computer. A port conflict occurs when multiple services try to use the same port number at the same time. This leads to a situation where neither service can operate.
 
 ## Detecting port conflicts
 
-When working with Express, you've likely encountered port conflicts. They appear as unhandled errors that cause your application to crash. The resulting error messages you see in your terminal can be daunting, especially when troubleshooting other issues. Detecting port conflicts can help you manage them more effectively.
+When working with Express, you've likely encountered port conflicts when trying to run multiple Express applications at the same time. They appear as unhandled errors that cause your application to crash. The resulting error messages you see in your terminal can be daunting, especially when troubleshooting other issues. Detecting port conflicts can help you manage them more effectively.
 
 In an Express app, `app.listen()` returns an instance of a web server. By 'listening' to the `'error'` event on this server instance, we can detect when a port conflict occurs. This gives us the opportunity to handle the error appropriately. To accomplish this, we'll use an important method in the Node.js environment called `on()`.
 
@@ -19,7 +19,7 @@ The method accepts two arguments:
 1. The name of the event we wish to listen for.
 2. A callback function.
 
-Let's chain this method to the end of the server instance provide a callback function that logs information on any error we encounter.
+Let's chain this method to the end of the server instance, providing a callback function that logs information on any error we encounter.
 
 Update `server.js` with the following:
 
@@ -70,16 +70,3 @@ killall node
 ```
 
 > 🚨 This command will stop all Node.js processes, which might include more than your intended target!
-
-Additionally, if a port number is not provided to `app.listen()`, your computer will assign a random unused port.
-
-Here is an example of this implementation:
-
-```javascript
-// server.js
-const server = app.listen(() => {
-  console.log(`The express app is ready on port ${server.address().port}!`);
-});
-```
-
-> 🚨 This can be useful in very specific circumstances, but should generally be avoided!
