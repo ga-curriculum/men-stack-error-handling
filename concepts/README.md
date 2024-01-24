@@ -12,7 +12,7 @@ Generally, error handling does not refer to errors in code syntax, like missing 
 
 Effective error handling is essential for maintaining the stability, security, and usability of an application. It plays a crucial role in identifying and managing unexpected issues, making our applications more reliable. Error handling not only improves the overall quality of an application, but offers several benefits for both users and developers.
 
-- For **users**, proper error handling creates a better user experience. Graceful error handling prevents application crashes and provides clear feedback, preventing user confusion and frustration. Well-crafted error messages inform users about issues and suggest corrective measures when possible. This is particularly important when using interactive elements like forms.
+- For **users**, proper error handling creates a better user experience. It prevents application crashes and provides clear feedback, preventing user confusion and frustration. Well-crafted error messages inform users about issues and suggest corrective measures when possible. This is particularly important when using interactive elements like forms.
 
 - For **developers**, error handling simplifies the debugging process and contributes to an application's long-term stability. By detecting and logging errors effectively, developers can diagnose and resolve issues more quickly. Developers should always endeavor to write code that does not *fail silently*.
 
@@ -20,7 +20,7 @@ Effective error handling is essential for maintaining the stability, security, a
 
 ## Types of errors in Node.js/Express
 
-Effective error handling requires a solid understanding of the types of errors your application may encounter. Below are some common types of errors in you might deal with in an Express application.
+Effective error handling requires a solid understanding of the types of errors your application may encounter. Below are some common types of errors you might deal with in an Express application.
 
 - **Runtime Errors**: These happen during the execution of your application. For example, if your code tries to read a property from an undefined variable, it causes a runtime error. These errors can crash your application if not handled.
 
