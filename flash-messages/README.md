@@ -6,11 +6,11 @@
 
 Flash messages are a way of displaying temporary messages to uses in web applications. Typically, they show a user immediate feedback about the result of an action the user has taken. For example, after a user submits a form, there might be a flash message that appears indicating the resource was saved successfully. Flash messages can also be used to notify the user of an error with a given operation.
 
-They are particularly useful for delvering messages across redirects. If a resource is deleted, and the user is redirected to another page, a flash message can be used to notify of them of the operation's outcome on the new page. 
+They are particularly useful for delvering messages across redirects. If a resource is deleted, and the user is redirected to another page, a flash message can be used to notify them of the operation's outcome on the new page. 
 
 Flash messages are often implemented using *session storage*. This means the message is stored in the user's session and is cleared once it has been displayed.
 
-> 📚 [*Session storage*](https://expressjs.com/en/resources/middleware/session.html) in Express is a way of storing data on the server for users, keeping track of their activity on the website.
+> 📚 [*Session storage*](https://expressjs.com/en/resources/middleware/session.html) in Express is a way of storing data on the server for users, keeping track of their activity on the website.  They're very similar to cookies.
 
 ## Implementing flash messages with custom middleware
 
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 });
 ```
 
-This middleware checks if there's a `message` in `req.session`. If so, it assigns it to `res.locals.message` for easy access in views, and then clears it from the session to Our middleware checks if there is a message stored in `req.session.message`. If it finds one, it transfers this message to `res.locals.message`. The `res.locals` object is accessible in our views, making it easy to display the flash message on the appropriate page.
+Our middleware checks if there is a message stored in `req.session.message`. If it finds one, it transfers this message to `res.locals.message`. The `res.locals` object is accessible in our views, making it easy to display the flash message on the appropriate page.
 
 After updating `res.locals`, we set `req.session.message` to `null`. This ensures that the flash message is only displayed once for the user. Without this, the message would persist in the session and could be displayed at an inappropriate time. By accomplishing this in our middleware, we save ourselves the step of clearing our the session in every controller function that needs to display a message.
 
@@ -53,7 +53,7 @@ router.post('/fruits', async (req, res) => {
 });
 ```
 
-In the code above, we are adding one of two messages to `req.session.message`, depending on the outcome of the `create()` operation. In either case, once the message is added to `req.session.message`, a `redirect()` occurs. This triggers our custom middleware, at which point at which point the message is added to `res.locals.message`, and cleared from the session.
+In the code above, we are adding one of two messages to `req.session.message`, depending on the outcome of the `create()` operation. In either case, once the message is added to `req.session.message`, a `redirect()` occurs. The `redirect()` causes the browser to make a new request to `/fruits`.  When this new request comes in, our custom middleware is triggered, at which point at which point the message is added to `res.locals.message`, and cleared from the session.
 
 For users to see the flash message, we'll need to modify the view that corresponds with the path users are being redirected to upon creation (`'/fruits'` in this case).
 
@@ -66,7 +66,7 @@ Add the following to the view:
 <% } %>
 ```
 
-> 🏆 By using `typeof message !== 'undefined'`, we check if message variable exists before trying to use it. This is a safer way to check for the presence of a variable in EJS because it doesn't throw an error if the variable is not defined. This accounts for situations where message is not be passed to the template.
+> 🏆 By using `typeof message !== 'undefined'`, we check if message variable exists before trying to use it. This is a safer way to check for the presence of a variable in EJS because it doesn't throw an error if the variable is not defined. This accounts for situations where message is not passed to the template.
 
 If we try creating a fruit, we should see the following text at the top of the index view:
 
@@ -90,5 +90,7 @@ router.post('/fruits', async (req, res) => {
   }
 });
 ```
+
+Try to create a new fruit, using the browser.
 
 > 🚨 Remember to remove the simulated error after testing!
