@@ -2,7 +2,7 @@
 
 **Learning Objective:** By the end of this lesson, students will understand how to implement flash messages in Express applications.
 
-## Understanding Flash Messages
+## Understanding flash messages
 
 Flash messages are a way of displaying temporary messages to uses in web applications. Typically, they show a user immediate feedback about the result of an action the user has taken. For example, after a user submits a form, there might be a flash message that appears indicating the resource was saved successfully. Flash messages can also be used to notify the user of an error with a given operation.
 
