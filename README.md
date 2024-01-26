@@ -1,4 +1,4 @@
-# ![MEN Stack Error Handling](./assets/tktk-hero.png)
+# ![MEN Stack Error Handling](./assets/hero.png)
 
 ## About
 
