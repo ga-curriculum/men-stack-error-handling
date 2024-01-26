@@ -1,6 +1,6 @@
 # ![MEN Stack Error Handling - Client-Side Error Handling](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will understand the benefit of preempting errors on the client.
+**Learning objective:** By the end of this lesson, students will understand the benefits of handling errors in the client-side code.
 
 ## What is client-side error handling?
 
