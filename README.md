@@ -22,24 +22,9 @@ This module provides a guide to error handling in Express applications. It cover
 | [Handling Port Conflicts](./handling-port-conflicts/README.md) | -- | -- |  Handling port conflicts in an Express application. |
 | **Total content**                                        | -- | -- |                     |
 
-## Level Up content
-
-| Lesson | Video Time | Video | Skills |
-| ------ |:----------:|:-----:| ------ |
-| [tktk Level Up Microlesson Name](./level-up/tktk-microlesson-01.md) | -- | -- | tktk skills covered |
-| **Total Level Up content**                                          | -- | -- |                     |
-
 ## References
 
 📖 [Reference Materials](./references/README.md)
-
-## Deployed sites
-
-tktk If there is not a deployed site related to this module this section and all of its content should be removed.
-
-🌐 [Live site](#tktk-deployed-app-url)
-
-🐙 [Repository](#tktk-repository-for-deployed-app)
 
 ## Internal resources
 
