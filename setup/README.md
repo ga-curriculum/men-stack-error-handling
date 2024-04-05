@@ -8,14 +8,27 @@ Open your terminal and navigate to your `lectures` directory:
 cd ~/code/ga/lectures
 ```
 
-tktk This needs to be updated based on how we handle the auth template
+## Cloning the Auth boilerplate
 
-Fork and clone the repository:
+This lecture uses the [`MEN Stack Auth Template`](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template) as starter code. Doing so allows us to have a connection established to our MongoDB Atlas, add functioning auth for our user model, and install some of the packages we will need for this lesson.
+
+Navigate to the [MEN Stack Auth Template](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template) and clone the repository to your machine:
 
 ```bash
-git clone https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template.git
+git clone git@git.generalassemb.ly:modular-curriculum-all-courses/men-stack-session-auth-template.git
 ```
 
+Once we have the repository on our machines, we can change the name of the directory to better reflect this lesson:  `men-stack-error-handling`
+
+```bash
+mv men-stack-session-auth-template men-stack-error-handling
+```
+
+Next, `cd` into your renamed directory:
+
+```bash
+cd men-stack-error-handling
+```
 Install the dev dependencies:
 
 ```bash

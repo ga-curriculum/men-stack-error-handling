@@ -8,9 +8,3 @@
 - [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - [Node Events](https://nodejs.org/api/events.html#events)
 - [Express `app.listen()`](https://expressjs.com/en/5x/api.html#app.listen_path_callback)
-
-## Level Up references
-
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
