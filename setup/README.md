@@ -8,8 +8,6 @@ Open your terminal and navigate to your `lectures` directory:
 cd ~/code/ga/lectures
 ```
 
-tktk This needs to be updated based on how we handle the auth template
-
 Fork and clone the repository:
 
 ```bash

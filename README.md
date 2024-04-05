@@ -6,7 +6,12 @@ This module provides a guide to error handling in Express applications. It cover
 
 ## Prerequisites
 
-- tktk
+- Intro to Node
+- Intro to Express
+- Intro to Databases
+- Environment Variables
+- Intro to Mongoose
+- MEN Stack - Session Auth
 
 ## Content
 
