@@ -8,7 +8,10 @@ This module is designed to equip you with a comprehensive understanding of error
 
 - Intro to Node
 - Intro to Express
-- EJS
+- Intro to Databases
+- Environment Variables
+- Intro to Mongoose
+- MEN Stack - Session Auth
 
 ## Content
 
