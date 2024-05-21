@@ -50,18 +50,18 @@ Let's update our controller function for creating fruits so it handles this vali
 
 ```javascript
 // controllers/fruits.js
-router.post('/fruits', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     await Fruit.create(req.body);
-    res.redirect('/fruits');
+    res.redirect("/fruits");
   } catch (err) {
-    console.log(err.message) // Logs the error message
-    res.send('An error has occurred.  Go back and try again.')
+    console.log(err.message); // Logs the error message
+    res.send("An error has occurred.  Go back and try again.");
   }
 });
 ```
 
-Now, when a user submits a form without filling out the `name` field, the resulting validation error is dealt with in our `try...catch` block. 
+Now, when a user submits a form without filling out the `name` field, the resulting validation error is dealt with in our `try...catch` block.
 
 When the operation in the `try` has failed, control is passed to the `catch` block, where it receives an `Error` object as an argument. The `Error` object will contain a `message` property with details about the error that occurred.
 
@@ -96,20 +96,20 @@ Here is how we could modify our code to handle this edge case:
 
 ```javascript
 // controllers/fruits.js
-router.post('/fruits', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     if (!req.body.name.trim()) {
-      throw new Error('Invalid input: The name field cannot be empty!');
+      throw new Error("Invalid input: The name field cannot be empty!");
     }
     await Fruit.create(req.body);
-    res.redirect('/fruits');
+    res.redirect("/fruits");
   } catch (err) {
-    res.render('fruits/new.ejs', { errorMessage: err.message });
+    res.render("fruits/new.ejs", { errorMessage: err.message });
   }
 });
 ```
 
-Notice the `if` statement in the example above. 
+Notice the `if` statement in the example above.
 
 The [trim() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim) returns a new string with the white space removed. We've applied the method to the `name` property of `req.body`. If the `name` field is invalid, we create and `throw` a new error with a custom error message.
 
@@ -120,6 +120,6 @@ Finally, we can display the `errorMessage` for users by adding the following to 
 ```html
 <!-- views/fruits/new.ejs -->
 <% if (typeof errorMessage !== 'undefined') { %>
-  <p><%= errorMessage %></p>
+<p><%= errorMessage %></p>
 <% } %>
 ```
