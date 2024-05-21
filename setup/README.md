@@ -42,6 +42,12 @@ Create a `.env` file:
 touch .env
 ```
 
+Open the project in VS Code
+
+```bash
+code .
+```
+
 Add the following to your `.env`:
 In the .env file:
 
