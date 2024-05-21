@@ -6,11 +6,11 @@
 
 Flash messages are a way of displaying temporary messages to uses in web applications. Typically, they show a user immediate feedback about the result of an action the user has taken. For example, after a user submits a form, there might be a flash message that appears indicating the resource was saved successfully. Flash messages can also be used to notify the user of an error with a given operation.
 
-They are particularly useful for delvering messages across redirects. If a resource is deleted, and the user is redirected to another page, a flash message can be used to notify them of the operation's outcome on the new page. 
+They are particularly useful for delvering messages across redirects. If a resource is deleted, and the user is redirected to another page, a flash message can be used to notify them of the operation's outcome on the new page.
 
-Flash messages are often implemented using *session storage*. This means the message is stored in the user's session and is cleared once it has been displayed.
+Flash messages are often implemented using _session storage_. This means the message is stored in the user's session and is cleared once it has been displayed.
 
-> 📚 [*Session storage*](https://expressjs.com/en/resources/middleware/session.html) in Express is a way of storing data on the server for users, keeping track of their activity on the website.  They're very similar to cookies.
+> 📚 [_Session storage_](https://expressjs.com/en/resources/middleware/session.html) in Express is a way of storing data on the server for users, keeping track of their activity on the website. They're very similar to cookies.
 
 ## Implementing flash messages with custom middleware
 
@@ -41,28 +41,27 @@ Update the `post` controller as shown below:
 
 ```javascript
 // controllers/fruits.js
-router.post('/fruits', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     await Fruit.create(req.body);
-    req.session.message = 'Fruit successfully created.';
-    res.redirect('/fruits');
+    req.session.message = "Fruit successfully created.";
+    res.redirect("/fruits");
   } catch (err) {
     req.session.message = err.message;
-    res.redirect('/fruits');
+    res.redirect("/fruits");
   }
 });
 ```
 
-In the code above, we are adding one of two messages to `req.session.message`, depending on the outcome of the `create()` operation. In either case, once the message is added to `req.session.message`, a `redirect()` occurs. The `redirect()` causes the browser to make a new request to `/fruits`.  When this new request comes in, our custom middleware is triggered, at which point at which point the message is added to `res.locals.message`, and cleared from the session.
+In the code above, we are adding one of two messages to `req.session.message`, depending on the outcome of the `create()` operation. In either case, once the message is added to `req.session.message`, a `redirect()` occurs. The `redirect()` causes the browser to make a new request to `/fruits`. When this new request comes in, our custom middleware is triggered, at which point at which point the message is added to `res.locals.message`, and cleared from the session.
 
 For users to see the flash message, we'll need to modify the view that corresponds with the path users are being redirected to upon creation (`'/fruits'` in this case).
 
 Add the following to the view:
 
 ```html
-// views/fruits/index.ejs
-<% if (typeof message !== 'undefined') { %>
-  <p><%= message %></p>
+// views/fruits/index.ejs <% if (typeof message !== 'undefined') { %>
+<p><%= message %></p>
 <% } %>
 ```
 
@@ -78,15 +77,15 @@ To view our error message, we can temporarily modify the controller to simulate 
 
 ```javascript
 // controllers/fruits.js
-router.post('/fruits', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    throw new Error('A problem occured!')
+    throw new Error("A problem occured!");
     await Fruit.create(req.body);
-    req.session.message = 'Fruit successfully created.';
-    res.redirect('/fruits');
+    req.session.message = "Fruit successfully created.";
+    res.redirect("/fruits");
   } catch (err) {
     req.session.message = err.message;
-    res.redirect('/fruits');
+    res.redirect("/fruits");
   }
 });
 ```
