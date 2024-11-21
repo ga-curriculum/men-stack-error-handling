@@ -18,7 +18,7 @@ This lecture uses the [`MEN Stack Auth Template`](https://git.generalassemb.ly/m
 Navigate to the [MEN Stack Auth Template](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template) and clone the repository to your machine:
 
 ```bash
-git clone git@git.generalassemb.ly:modular-curriculum-all-courses/men-stack-session-auth-template.git
+git clone https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-error-handling.git
 ```
 
 Once we have the repository on our machines, we can change the name of the directory to better reflect this lesson: `men-stack-error-handling`
@@ -33,44 +33,68 @@ Next, `cd` into your renamed directory:
 cd men-stack-error-handling
 ```
 
-Install the dev dependencies:
+Finally, remove the existing `.git` information from this template:
 
 ```bash
-npm i
+rm -rf .git
 ```
 
-Create a `.env` file:
+> Removing the `.git` info is important as this is just a starter template provided by GA. You do not need the existing git history for this project.
+
+## GitHub setup
+
+To add this project to GitHub, initialize a new Git repository:
 
 ```bash
-touch .env
+git init
+git add .
+git commit -m "init commit"
 ```
 
-Open the project in VS Code
+Make a new repository on [GitHub](https://github.com/) named `men-stack-error-handling`.
+
+Link your local project to your remote GitHub repo:
+
+```bash
+git remote add origin https://github.com/<github-username>/men-stack-error-handling.git
+git push origin main
+```
+
+> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above.
+
+Open the project's folder in your code editor:
 
 ```bash
 code .
 ```
 
-Add the following to your `.env`:
-In the .env file:
+## Install dependencies
 
-```plaintext
-SESSION_SECRET=secret-string-unique-to-your-app
-MONGODB_URI=your-mongo-db-ur-goes-here
-```
-
-> 🚨 Be sure to update the `MONGODB_URI` accordingly!
-
-Create a `.gitignore` file in your project's root directory:
+Next, you will want to install all of the packages listed in `package.json`
 
 ```bash
-touch .gitignore
+npm i
 ```
 
-Add the following to your `.gitignore` file:
+## Create your .gitignore
 
-```plaintext
+Once these files are created, add `.env`, `package-lock.json`, and `node_modules` to your `.gitignore` file. Doing so will prevent those files and directories from being tracked and we can be confident that any data we add there will not be pushed up to GitHub.
+
+```text
 .env
+node_modules
+package-lock.json
+```
+
+## Create your .env
+
+Lastly, we want to create `MONGODB_URI` and `SESSION_SECRET` to hold values used in our auth logic. `MONGODB_URI` will connect to your MongoDB Atlas connection string so you will need to establish one for this application. `SESSION_SECRET` will aid in your auth session logic.
+
+Add a `.env` file to your application and add the following secret keys to your application:
+
+```text
+MONGODB_URI=
+SESSION_SECRET=
 ```
 
 ## Scaffolding the application
@@ -91,7 +115,7 @@ Add the following to `models/fruit.js`:
 
 ```javascript
 // models/fruit.js
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const fruitSchema = mongoose.Schema({
   name: {
@@ -100,7 +124,7 @@ const fruitSchema = mongoose.Schema({
   },
 });
 
-const Fruit = mongoose.model("Fruit", fruitSchema);
+const Fruit = mongoose.model('Fruit', fruitSchema);
 
 module.exports = Fruit;
 ```
@@ -119,23 +143,23 @@ Add the following to `controllers/fruits.js`:
 
 ```javascript
 // controllers/fruits.js
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
-const Fruit = require("../models/fruit.js");
+const Fruit = require('../models/fruit.js');
 
-router.get("/new", (req, res) => {
-  res.render("fruits/new.ejs");
+router.get('/new', (req, res) => {
+  res.render('fruits/new.ejs');
 });
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   await Fruit.create(req.body);
-  res.redirect("/fruits");
+  res.redirect('/fruits');
 });
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   const foundFruits = await Fruit.find();
-  res.render("fruits/index.ejs", { fruits: foundFruits });
+  res.render('fruits/index.ejs', { fruits: foundFruits });
 });
 
 module.exports = router;
@@ -210,22 +234,22 @@ Add the following to `views/fruits/new.ejs`:
 Let's now update our `server.js` to import the fruits controller and use it for our `/fruits` routes. Make sure your `server.js` looks exactly like this:
 
 ```javascript
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
 dotenv.config();
-const express = require("express");
+const express = require('express');
 const app = express();
-const mongoose = require("mongoose");
-const morgan = require("morgan");
-const session = require("express-session");
+const mongoose = require('mongoose');
+const morgan = require('morgan');
+const session = require('express-session');
 
-const authController = require("./controllers/auth.js");
-const fruitsController = require("./controllers/fruits.js"); // add this
+const authController = require('./controllers/auth.js');
+const fruitsController = require('./controllers/fruits.js'); // add this
 
-const port = process.env.PORT ? process.env.PORT : "3000";
+const port = process.env.PORT ? process.env.PORT : '3000';
 
 mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.connection.on("connected", () => {
+mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
@@ -238,22 +262,22 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
-  res.render("index.ejs", {
+app.get('/', (req, res) => {
+  res.render('index.ejs', {
     user: req.session.user,
   });
 });
 
-app.get("/vip-lounge", (req, res) => {
+app.get('/vip-lounge', (req, res) => {
   if (req.session.user) {
     res.send(`Welcome to the party ${req.session.user.username}.`);
   } else {
-    res.send("Sorry, no guests allowed.");
+    res.send('Sorry, no guests allowed.');
   }
 });
 
-app.use("/auth", authController);
-app.use("/fruits", fruitsController); // add this
+app.use('/auth', authController);
+app.use('/fruits', fruitsController); // add this
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
