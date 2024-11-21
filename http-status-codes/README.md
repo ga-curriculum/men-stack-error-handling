@@ -1,4 +1,7 @@
-# ![MEN Stack Error Handling - HTTP Status Codes](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Error Handling</span>
+  <span class="subhead">HTTP Status Codes</span>
+</h1>
 
 **Learning Objective:** By the end of this lesson, students will understand how to use HTTP status codes for effective error handling.
 

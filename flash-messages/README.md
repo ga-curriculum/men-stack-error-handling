@@ -1,4 +1,7 @@
-# ![MEN Stack Error Handling - Flash Messages](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Error Handling</span>
+  <span class="subhead">Flash Messages</span>
+</h1>
 
 **Learning Objective:** By the end of this lesson, students will understand how to implement flash messages in Express applications.
 

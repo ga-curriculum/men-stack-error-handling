@@ -1,4 +1,7 @@
-# ![MEN Stack Error Handling - Client-Side Error Handling](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Error Handling</span>
+  <span class="subhead">Client Side Error Handling</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will understand the benefits of handling errors in the client-side code.
 

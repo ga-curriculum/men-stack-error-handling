@@ -1,4 +1,7 @@
-# ![MEN Stack Error Handling - Server-Side Error Handling](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Error Handling</span>
+  <span class="subhead">Server Side Error Handling</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will understand the role of server-side error handling.
 

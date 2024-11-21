@@ -1,4 +1,7 @@
-# ![MEN Stack Error Handling - References](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Error Handling</span>
+  <span class="subhead">References</span>
+</h1>
 
 ## Lesson references
 

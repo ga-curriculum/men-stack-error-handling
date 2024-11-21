@@ -1,4 +1,7 @@
-# ![MEN Stack Error Handling - Concepts](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Error Handling</span>
+  <span class="subhead">Concepts</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will understand the purpose and importance of error handling in an application.
 

@@ -1,4 +1,7 @@
-# ![MEN Stack Error Handling - Setup](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Error Handling</span>
+  <span class="subhead">Setup</span>
+</h1>
 
 ## Setup
 
