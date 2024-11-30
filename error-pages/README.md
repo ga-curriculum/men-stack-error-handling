@@ -1,4 +1,7 @@
-# ![MEN Stack Error Handling - Error Pages](./assets/hero.png)
+<h1>
+  <span class="headline">MEN Stack Error Handling</span>
+  <span class="subhead">Error Pages</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to implement error pages in a web application.
 

@@ -1,0 +1,60 @@
+import "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/universal-resources-internal/static/v2/pkl/template.pkl" as Template
+
+// Add microlessons here, in the order they should be delivered
+
+setup = new Template.Microlesson {
+  friendlyName = "Setup"
+  dirName = "setup"
+  type = "Content"
+  videoUrl = ""
+}
+
+concepts = new Template.Microlesson {
+  friendlyName = "Concepts"
+  dirName = "concepts"
+  type = "Content"
+  videoUrl = ""
+}
+
+serverSideErrorHandling = new Template.Microlesson {
+  friendlyName = "Server Side Error Handling"
+  dirName = "server-side-error-handling"
+  type = "Content"
+  videoUrl = ""
+}
+
+clientSideErrorHandling = new Template.Microlesson {
+  friendlyName = "Client Side Error Handling"
+  dirName = "client-side-error-handling"
+  type = "Content"
+  videoUrl = ""
+}
+
+errorPages = new Template.Microlesson {
+  friendlyName = "Error Pages"
+  dirName = "error-pages"
+  type = "Content"
+  videoUrl = ""
+}
+
+flashMessages = new Template.Microlesson {
+  friendlyName = "Flash Messages"
+  dirName = "flash-messages"
+  type = "Content"
+  videoUrl = ""
+}
+
+httpStatusCodes = new Template.Microlesson {
+  friendlyName = "HTTP Status Codes"
+  dirName = "http-status-codes"
+  type = "Content"
+  videoUrl = ""
+}
+
+handlingPortConflicts = new Template.Microlesson {
+  friendlyName = "Handling Port Conflicts"
+  dirName = "handling-port-conflicts"
+  type = "Content"
+  videoUrl = ""
+}
+
