@@ -1,6 +1,6 @@
 <h1>
   <span class="headline">MEN Stack Error Handling</span>
-  <span class="subhead">Client Side Error Handling</span>
+  <span class="subhead">Client-Side Error Handling</span>
 </h1>
 
 **Learning objective:** By the end of this lesson, students will understand the benefits of handling errors in the client-side code.

@@ -17,14 +17,14 @@ concepts = new Template.Microlesson {
 }
 
 serverSideErrorHandling = new Template.Microlesson {
-  friendlyName = "Server Side Error Handling"
+  friendlyName = "Server-Side Error Handling"
   dirName = "server-side-error-handling"
   type = "Content"
   videoUrl = ""
 }
 
 clientSideErrorHandling = new Template.Microlesson {
-  friendlyName = "Client Side Error Handling"
+  friendlyName = "Client-Side Error Handling"
   dirName = "client-side-error-handling"
   type = "Content"
   videoUrl = ""

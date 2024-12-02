@@ -40,7 +40,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Server Side Error Handling",
+          "friendlyName": "Server-Side Error Handling",
           "dirName": "server-side-error-handling",
           "type": "Content",
           "skill": "",
@@ -50,7 +50,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Client Side Error Handling",
+          "friendlyName": "Client-Side Error Handling",
           "dirName": "client-side-error-handling",
           "type": "Content",
           "skill": "",
@@ -149,7 +149,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Server Side Error Handling",
+          "friendlyName": "Server-Side Error Handling",
           "dirName": "server-side-error-handling",
           "type": "Content",
           "skill": "",
@@ -159,7 +159,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Client Side Error Handling",
+          "friendlyName": "Client-Side Error Handling",
           "dirName": "client-side-error-handling",
           "type": "Content",
           "skill": "",
