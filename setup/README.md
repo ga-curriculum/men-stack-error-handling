@@ -13,12 +13,12 @@ cd ~/code/ga/lectures
 
 ## Cloning the auth template
 
-This lecture uses the [`MEN Stack Auth Template`](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template) as starter code. This starter code has everything we'll need to get started - a connection to MongoDB Atlas, functioning auth, and some of the packages we will need for this lesson.
+This lecture uses the [`MEN Stack Auth Template`](https://github.com/ga-curriculum/men-stack-session-auth-template-v2) as starter code. This starter code has everything we'll need to get started - a connection to MongoDB Atlas, functioning auth, and some of the packages we will need for this lesson.
 
 Clone the `MEN Stack Auth Template` repository to your machine:
 
 ```bash
-git clone https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-session-auth-template men-stack-error-handling
+git clone https://github.com/ga-curriculum/men-stack-session-auth-template-v2 men-stack-error-handling
 ```
 
 Note the `men-stack-error-handling` at the end of the command. This is the name of the directory that will be created on your machine when the repo is cloned.
